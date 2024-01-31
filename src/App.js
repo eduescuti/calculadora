@@ -1,21 +1,57 @@
 import './css/App.css';
-import Boton from './componentes/Boton'
+import Boton from './componentes/Boton';
+import Pantalla from './componentes/Pantalla';
+import { useState } from 'react';
+import { evaluate } from 'mathjs';
 
 function App() {
+
+	const [input, setInput] = useState('');
+
+	const asignarInput = valor => {
+		if (valor === "Clear") {
+			setInput("");
+		} else {
+			setInput(input + valor);
+		}
+
+	};
+
+	const calcularResultado = () => {
+		if (input) {
+			setInput(evaluate(input));
+		} else {
+			setInput("Error");
+		}
+	};
+
 	return (
 		<div className="App">
 			<div className='contenedorCalculadora'>
-
-				<Boton texto="1" />
-				<Boton texto="2" />
-				<Boton texto="3" />
-				<Boton texto="4" />
-				<Boton texto="5" />
-				<Boton texto="6" />
-				<Boton texto="7" />
-				<Boton texto="8" />
-				<Boton texto="9" />
-				<Boton texto="0" />
+				<Pantalla input={input} />
+				<div className='fila'>
+					<Boton manejarClick={asignarInput} texto="1" />
+					<Boton manejarClick={asignarInput} texto="2" />
+					<Boton manejarClick={asignarInput} texto="3" />
+				</div>
+				<div className='fila'>
+					<Boton manejarClick={asignarInput} texto="4" />
+					<Boton manejarClick={asignarInput} texto="5" />
+					<Boton manejarClick={asignarInput} texto="6" />
+				</div>
+				<div className='fila'>
+					<Boton manejarClick={asignarInput} texto="7" />
+					<Boton manejarClick={asignarInput} texto="8" />
+					<Boton manejarClick={asignarInput} texto="9" />
+				</div>
+				<div className='fila'>
+					<Boton manejarClick={asignarInput} texto="." />
+					<Boton manejarClick={asignarInput} texto="0" />
+					<Boton manejarClick={calcularResultado} texto="=" />
+				</div>
+				<div className='botonClear'>
+					<Boton manejarClick={asignarInput} texto="Clear" />
+				</div>
 			</div>
 
 		</div>
