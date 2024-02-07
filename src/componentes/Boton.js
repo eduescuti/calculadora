@@ -1,4 +1,4 @@
-
+import '../css/Boton.css'
 
 function Boton(props) {
 
@@ -7,7 +7,7 @@ function Boton(props) {
     };
 
     return (
-        <div className={`boton-contenedor ${esOperador(props.children) ? 'operador' : ''}`}
+        <div className={esOperador(props.texto) ? 'operador' : 'boton-contenedor'}
             onClick={() => props.manejarClick(props.texto)}>
 
             {props.texto}

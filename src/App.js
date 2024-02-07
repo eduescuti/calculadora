@@ -27,27 +27,34 @@ function App() {
 
 	return (
 		<div className="App">
+			<div className='titulo'>
+				CALCULADORA
+			</div>
 			<div className='contenedorCalculadora'>
 				<Pantalla input={input} />
 				<div className='fila'>
 					<Boton manejarClick={asignarInput} texto="1" />
 					<Boton manejarClick={asignarInput} texto="2" />
 					<Boton manejarClick={asignarInput} texto="3" />
+					<Boton manejarClick={asignarInput} texto="+" />
 				</div>
 				<div className='fila'>
 					<Boton manejarClick={asignarInput} texto="4" />
 					<Boton manejarClick={asignarInput} texto="5" />
 					<Boton manejarClick={asignarInput} texto="6" />
+					<Boton manejarClick={asignarInput} texto="-" />
 				</div>
 				<div className='fila'>
 					<Boton manejarClick={asignarInput} texto="7" />
 					<Boton manejarClick={asignarInput} texto="8" />
 					<Boton manejarClick={asignarInput} texto="9" />
+					<Boton manejarClick={asignarInput} texto="*" />
 				</div>
 				<div className='fila'>
 					<Boton manejarClick={asignarInput} texto="." />
 					<Boton manejarClick={asignarInput} texto="0" />
 					<Boton manejarClick={calcularResultado} texto="=" />
+					<Boton manejarClick={asignarInput} texto="/" />
 				</div>
 				<div className='botonClear'>
 					<Boton manejarClick={asignarInput} texto="Clear" />

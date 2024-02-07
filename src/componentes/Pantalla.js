@@ -1,3 +1,5 @@
+import '../css/Pantalla.css'
+
 function Pantalla({ input }) {
 
     return (
