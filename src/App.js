@@ -8,7 +8,8 @@ function App() {
 
 	const [input, setInput] = useState('');
 
-	const asignarInput = valor => {
+	function asignarInput(valor) {
+
 		if (valor === "Clear") {
 			setInput("");
 		} else {
@@ -17,7 +18,7 @@ function App() {
 
 	};
 
-	const calcularResultado = () => {
+	function calcularResultado() {
 		if (input) {
 			setInput(evaluate(input));
 		} else {

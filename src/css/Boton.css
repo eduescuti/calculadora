@@ -19,7 +19,8 @@
     background-color: #3c0070;
 }
 
-.operador {
+.operador,
+.clear {
     height: 83px;
     display: flex;
     flex: 1 1;
@@ -38,4 +39,8 @@
 
 .operador:hover {
     background-color: #913a00;
+}
+
+.clear:hover {
+    background-color: #910000;
 }
